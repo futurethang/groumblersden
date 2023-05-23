@@ -1,9 +1,83 @@
-<body bgcolor="#00FFFF" text="#FF0000">
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    td {
+        width: 250px;
+        height: 250px;
+    }
+    td img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    #modal-content {
+        margin: 15% auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+    }
+
+    #modal img {
+        width: 100%;
+    }
+</style>
+
+<body>
     <h1 align="center">Images</h1>
-    <p align="center">
-        <img src="grombler1.jpg" alt="Grombler Image 1"><br>
-        <img src="grombler2.jpg" alt="Grombler Image 2"><br>
-        <img src="grombler3.jpg" alt="Grombler Image 3"><br>
-        <img src="grombler4.jpg" alt="Grombler Image 4"><br>
-    </p>
+    <p>Below are some images from the Groumbler community. Some are depictions drawn or described from close encounters with a gang of Groumblers. Some folks have even caugh some glimpses of GRroumblers on remote critter cams. No one has ever caught a Groumbler alive, and all images should be assumed to possibly be fakes, but you just never know do you?!?!</p>
+    <table>
+        <tr>
+            <td><img src="images/gromb-draw2.webp" onclick="openModal('images/gromb-draw2.webp')"></td>
+            <td><img src="images/critter-cam3.webp" onclick="openModal('images/critter-cam3.webp')"></td>
+            <td><img src="images/gromb-draw4.webp" onclick="openModal('images/gromb-draw4.webp')"></td>
+        </tr>
+        <tr>
+            <td><img src="images/gromb-draw6.webp" onclick="openModal('images/gromb-draw6.webp')"></td>
+            <td><img src="images/critter-cam1.webp" onclick="openModal('images/critter-cam1.webp')"></td>
+            <td><img src="images/gromb-draw3.webp" onclick="openModal('images/gromb-draw3.webp')"></td>
+        </tr>
+        <tr>
+            <td><img src="images/gromb-draw7.webp" onclick="openModal('images/gromb-draw7.webp')"></td>
+            <td><img src="images/bank2.webp" onclick="openModal('images/bank2.webp')"></td>
+            <td><img src="images/critter-cam2.webp" onclick="openModal('images/critter-cam2.webp')"></td>
+        </tr>
+        <tr>
+            <td><img src="images/gromb-draw1.webp" onclick="openModal('images/gromb-draw1.webp')"></td>
+            <td><img src="images/bank1.webp" onclick="openModal('images/bank1.webp')"></td>
+            <td><img src="images/gromb-draw5.webp" onclick="openModal('images/gromb-draw5.webp')"></td>
+        </tr>
+        <!-- Repeat the above row for the remaining rows -->
+    </table>
+
+    <div id="modal">
+        <span id="close" onclick="closeModal()">&times;</span>
+        <div id="modal-content">
+            <img id="modal-img">
+        </div>
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('modal').style.display = "block";
+            document.getElementById('modal-img').src = src;
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = "none";
+        }
+    </script>
 </body>
